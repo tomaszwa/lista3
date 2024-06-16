@@ -1,0 +1,10 @@
+C:\Users\vdi-terminal\Desktop\lista3\lista3\lista3\lista3\bin\Debug\lista3.exe.config
+C:\Users\vdi-terminal\Desktop\lista3\lista3\lista3\lista3\bin\Debug\lista3.exe
+C:\Users\vdi-terminal\Desktop\lista3\lista3\lista3\lista3\bin\Debug\lista3.pdb
+C:\Users\vdi-terminal\Desktop\lista3\lista3\lista3\lista3\bin\Debug\Newtonsoft.Json.dll
+C:\Users\vdi-terminal\Desktop\lista3\lista3\lista3\lista3\bin\Debug\Newtonsoft.Json.xml
+C:\Users\vdi-terminal\Desktop\lista3\lista3\lista3\lista3\obj\Debug\lista3.csproj.AssemblyReference.cache
+C:\Users\vdi-terminal\Desktop\lista3\lista3\lista3\lista3\obj\Debug\lista3.csproj.CoreCompileInputs.cache
+C:\Users\vdi-terminal\Desktop\lista3\lista3\lista3\lista3\obj\Debug\lista3.csproj.Up2Date
+C:\Users\vdi-terminal\Desktop\lista3\lista3\lista3\lista3\obj\Debug\lista3.exe
+C:\Users\vdi-terminal\Desktop\lista3\lista3\lista3\lista3\obj\Debug\lista3.pdb
