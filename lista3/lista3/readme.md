@@ -7,3 +7,6 @@ Główną częścią skryptu jest metoda "FetchAndParseApiData" która w pierwsz
 Następnie korzystając z wbudowanej biblioteki HTTP sprawdzamy czy zapytanie zakończyło się sukcesem i sprawdzamy kod odpowiedzi zwrócony przez serwer.
 
 Po otrzymaniu zwrotki z API korzystamy z biblioteki JObject która parse'uje otrzymaną odpowiedź
+
+
+Metoda ValidateJsonResponse sprawdza poprawność danych w zwrotce. Przyjmuje ona argument endpoint oraz jsonResponse gdzie podajemy kolejno jaki parametr chcemy sprawdzić i zwrotkę która chcemy sprawdzić.  
