@@ -1,6 +1,8 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Net.Http;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 class Program
@@ -33,10 +35,13 @@ class Program
                 JObject jsonResponse = JObject.Parse(responseBody);
 
                 Console.WriteLine("Dane z API: " + jsonResponse.ToString());
-                
-                if (!jsonResponse.ToString().Contains("id") || !jsonResponse.ToString().Contains("userId"))
+
+                if (response.IsSuccessStatusCode)
                 {
-                    Console.WriteLine("Błąd! Zwrotka z API jest pusta");
+                    ValidateJsonResponse("userId", jsonResponse.ToString());
+                    ValidateJsonResponse("name", jsonResponse.ToString());
+                    ValidateJsonResponse("id", jsonResponse.ToString());
+
                 }
 
                 Console.ReadKey();
@@ -49,6 +54,56 @@ class Program
             {
                 Console.WriteLine("Wystąpił błąd: " + ex.Message);
             }
+        }
+    }
+    private static void ValidateJsonResponse(string endpointName, string jsonResponse)
+    {
+        try
+        {
+            JsonDocument jsonDocument = JsonDocument.Parse(jsonResponse);
+
+           
+            switch (endpointName)
+            {
+                case "userId":
+                    foreach (var element in jsonDocument.RootElement.EnumerateArray())
+                    {
+                        if (!element.TryGetProperty("userId", out JsonElement userId))
+                        {
+                            Console.WriteLine($"Nie zawiera: {endpointName}");
+                        }
+                    }
+                    break;
+
+                case "name":
+                    foreach (var element in jsonDocument.RootElement.EnumerateArray())
+                    {
+                        if (!element.TryGetProperty("name", out JsonElement postId))
+                        {
+                            Console.WriteLine($"Nie zawiera: {endpointName}");
+                        }
+                    }
+                    break;
+
+                case "id":
+                    foreach (var element in jsonDocument.RootElement.EnumerateArray())
+                    {
+                        if (!element.TryGetProperty("id", out JsonElement id))
+                        {
+                            Console.WriteLine($"Nie zawiera: {endpointName}");
+                        }
+                    }
+                    break;
+
+                default:
+                    Console.WriteLine($"Nieznany parametr {endpointName}");
+                    break;
+            }
+
+        }
+        catch (System.Text.Json.JsonException e)
+        {
+            Console.WriteLine($"Błąd w zwrotce z API {endpointName}");
         }
     }
 }
